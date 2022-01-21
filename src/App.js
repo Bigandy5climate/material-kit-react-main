@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 import { useEffect } from "react";
-import Shop from "./shop/App";
+// import Shop from "./shop/App";
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
@@ -58,7 +58,7 @@ export default function App() {
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
-        <Route path="/" element={<Shop />} />
+        {/* <Route path="/" element={<Shop />} /> */}
       </Routes>
     </ThemeProvider>
   );
