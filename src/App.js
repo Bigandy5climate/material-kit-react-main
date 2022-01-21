@@ -19,7 +19,7 @@ import Shop from "./shop/App";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 // @mui material components
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
 // Material Kit 2 React themes
@@ -45,7 +45,14 @@ export default function App() {
       }
 
       if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
+        return (
+          <Route
+            exact
+            path={route.route}
+            element={route.component}
+            key={route.key}
+          />
+        );
       }
 
       return null;
@@ -58,7 +65,7 @@ export default function App() {
         {getRoutes(routes)}
         <Route path="/presentation" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
-        <Route path="/" element={<Shop />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
     </ThemeProvider>
   );
